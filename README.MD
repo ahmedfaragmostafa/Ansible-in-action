@@ -139,14 +139,14 @@ run `make`  inside project dir you will get following tasks:-
 
 ```
 Available tasks:
-    encrypt-vars                             Encrypt your vars file
-    decrypt-vars                             Decrypt your vars file
-    apply                                 Deploy your changes into your hosts
-    safe-apply                                 Deploy your changes into your hosts using vault pass
+    encrypt-vars                            Encrypt your vars file
+    decrypt-vars                            Decrypt your vars file
+    apply                                   Deploy your changes into your hosts
+    safe-apply                              Deploy your changes into your hosts using vault pass
     code-deploy                             Pull latest changes
-    safe-code-deploy                             Pull latest changes with vault pass
-    update-config                             Update your env file
-    safe-update-config                             Update your env file with vault pass
+    safe-code-deploy                        Pull latest changes with vault pass
+    update-config                           Update your env file
+    safe-update-config                      Update your env file with vault pass
 ```
 
 
@@ -175,5 +175,3 @@ make update-config
 - [ ] Ansible as provision in terraform 
 - [ ] automate startup script
 - [ ] automate and provision  instances and generate id_rsa key
-
- 
