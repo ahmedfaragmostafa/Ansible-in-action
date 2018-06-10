@@ -1,0 +1,15 @@
+---
+- ping: ~
+###
+- name: Update apt packages
+  apt:
+    update_cache: yes
+##
+- name: Install GIT VCS
+  apt:
+    name: git
+    state: latest
+##
+- name: Install htop
+  apt: name=htop
+

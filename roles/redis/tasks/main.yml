@@ -1,0 +1,11 @@
+---
+
+- name: Install Redis Server
+  apt:
+    name: redis-server
+    state: latest
+  ##
+- name: Check Redis  Server status
+  apt:
+    name: redis-server
+    state: present

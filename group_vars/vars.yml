@@ -1,0 +1,24 @@
+---
+##@ref https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html#variables-and-vaults
+ansible_ssh_user: "ubuntu"
+current_user: "ubuntu"
+server_name: "app_name"
+
+repo_git_url: "app_github_url"
+ansible_ssh_private_key_file: "ssh_dir"
+php_version: 7.2
+app_work_dir: /var/www/app_name/
+#mysql config
+mysql_host: "mysql_host"
+mysql_db: app_name
+mysql_user: sql_user
+mysql_pass: sql_pass
+
+#other config
+cache_driver: file
+session_driver: file
+app_env: production
+app_debug: false
+app_key: "your_app_key"
+app_name: "app_name"
+app_url: "your_app_url"

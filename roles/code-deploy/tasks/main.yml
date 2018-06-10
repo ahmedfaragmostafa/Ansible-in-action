@@ -1,0 +1,69 @@
+---
+- name: Make sure composer is at its latest version
+  composer:
+    working_dir: "{{ app_work_dir }}"
+    command: self-update
+  register: composer_self_update
+  changed_when: "not composer_self_update.stdout|search('You are already using composer version')"
+  tags:
+    - code-deploy
+
+#
+- name: Install packages
+  composer:
+    command: install
+    working_dir: "{{ app_work_dir }}"
+  tags:
+    - code-deploy
+#
+- name: Reset any local changes
+  shell: "cd {{app_work_dir}} && git reset --hard"
+  tags:
+    - code-deploy
+#
+- name: update repo - pull the latest changes
+  git:
+    repo: "{{repo_git_url}}"
+    dest: "{{app_work_dir}}"
+    update: yes
+    version: master
+    accept_hostkey: yes
+    key_file: /home/{{current_user}}/.ssh/id_rsa
+  tags:
+    - code-deploy
+
+    ##
+
+- name: Run artisan migrate
+  shell: "php {{app_work_dir}} artisan migrate"
+  tags:
+    - code-deploy
+    ##
+
+- name: Run clear cached routes
+  shell: "php {{app_work_dir}} artisan route:clear"
+  tags:
+    - code-deploy
+    ##
+
+- name: Run clear cache
+  shell: "php {{app_work_dir}} artisan cache:clear"
+  tags:
+    - code-deploy
+
+    ##
+- name: Update File Permissions
+  file: dest={{app_work_dir}}  mode=0755 recurse=yes
+  tags:
+    - code-deploy
+    - file-permissions
+
+      ##
+- name: Update storage Permissions
+  file: dest={{app_work_dir}}storage  mode=0777 recurse=yes
+  tags:
+    - code-deploy
+    - file-permissions
+
+- include: config-files.yml
+

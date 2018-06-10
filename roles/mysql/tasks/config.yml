@@ -1,0 +1,11 @@
+---
+# copy the dump and import it to db
+- name: Copy database over
+  copy: src=../files/dump.sql dest=/tmp/dump.sql
+  tags:
+    - mysql-config
+######
+- name: Import data
+  mysql_db: name="{{mysql_db}}" state=import target=/tmp/dump.sql login_user="{{mysql_user}}" login_password="{{mysql_pass}}"
+  tags:
+    - mysql-config

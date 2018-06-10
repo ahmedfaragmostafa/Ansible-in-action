@@ -1,0 +1,29 @@
+---
+- hosts: aws
+#common options between modules
+  sudo: yes
+  gather_facts: no
+
+  vars_files:
+    - ./group_vars/vars.yml
+  roles:
+    - misc
+    - php
+    - mysql
+    - redis
+    - nginx
+    - bootstrap-app
+    - code-deploy
+    ###
+  handlers:
+    - include: handlers/main.yml
+#
+#just for sake of !!
+#- name: Set date.timezone for FPM
+#  lineinfile:
+#    dest: /etc/php/{{php_version}}/fpm/php.ini
+#    regexp: "date.timezone ="
+#    line: "date.timezone = UTC"
+#  tags:
+#    - config-files
+#  notify: Restart Nginx

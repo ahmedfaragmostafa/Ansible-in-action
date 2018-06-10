@@ -1,0 +1,33 @@
+---
+- name: Clone your repo
+  git:
+    repo: "{{repo_git_url}}"
+    dest: "{{app_work_dir}}"
+    version: master
+    accept_hostkey: yes
+    key_file: /home/{{current_user}}/.ssh/id_rsa
+  tags:
+    - clone-repo
+
+- name: Check for Composer
+  stat:
+    path: /usr/local/bin/composer
+  register: composer_stat
+####
+
+- name: Download Composer
+  script: scripts/install_composer.sh
+  when: not composer_stat.stat.exists
+
+####
+- name: Move Composer Globally
+  become: true
+  command: mv composer.phar /usr/local/bin/composer
+  when: not composer_stat.stat.exists
+###
+- name: Set permissions on Composer
+  become: true
+  file:
+    path: /usr/local/bin/composer
+    mode: "a+x"
+

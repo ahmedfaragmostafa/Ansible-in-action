@@ -1,0 +1,10 @@
+---
+- hosts: aws
+  sudo: yes
+  vars_files:
+    - ./group_vars/vars.yml
+  roles:
+    - code-deploy
+  #include service handlers
+  handlers:
+    - include: handlers/main.yml
