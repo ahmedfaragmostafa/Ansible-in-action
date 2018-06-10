@@ -62,6 +62,7 @@ Pull my latest changes using a single command `make code-deploy`
 ```
 
 ## Quick start 
+
 Before you start make sure you did these steps into your VPS 
 you can add it  as a startup script 
 
@@ -70,6 +71,12 @@ you can add it  as a startup script
 sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt-get update
 sudo apt-get install -y python2.7 python3 python-pip
+```
+
+
+### clone Repo 
+```
+git clone https://github.com/ahmedfaragmostafa/Ansible-4-laravel.git
 ```
 
 ## Update ssh-keys
