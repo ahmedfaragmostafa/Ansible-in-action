@@ -74,7 +74,7 @@ sudo apt-get install -y python2.7 python3 python-pip
 ```
 
 
-### clone Repo 
+### Clone Repo 
 ```
 git clone https://github.com/ahmedfaragmostafa/Ansible-4-laravel.git
 ```
