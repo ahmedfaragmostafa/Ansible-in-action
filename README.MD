@@ -108,7 +108,7 @@ have a look at `env.conf` file
 
 
 
-## Encrypt & Decrypt your config  using vault
+### Encrypt & Decrypt your config  using vault [optional step]
 ```
 #first create .vault_pass.txt to save your key 
 touch .vault_pass.txt
@@ -121,7 +121,7 @@ make encrypt-vars
 make decrypt-vars
 ```
 
-## Note [optional step]
+### Note
 If you encrypted your config don't forget to use `--vault-password-file  .vault_pass.txt`
 i added both options if you use  any commands that start with `safe-`
 if you don't use vault use commands that don't have `safe-`
