@@ -82,7 +82,7 @@ git clone https://github.com/ahmedfaragmostafa/Ansible-4-laravel.git
 ## Update ssh-keys
 you have to ad you server id_rsa.pub to your github access keys 
 by login to your instance and 
-```
+``` bash
 ssh-keygen
 sudo chmod -R 644 .ssh/id_rsa
 cat .ssh/id_rsa.pub
@@ -99,7 +99,7 @@ cat .ssh/id_rsa.pub
 ### Update `vars.yml` file 
 you have to define you config inside `group_vars/vars.yml`
 
-```
+``` yml
 #for example
 ansible_ssh_user: "ubuntu"
 current_user: "ubuntu"
@@ -116,7 +116,7 @@ have a look at `env.conf` file
 
 
 ### Encrypt & Decrypt your config  using vault [optional step]
-```
+``` bash
 #first create .vault_pass.txt to save your key 
 touch .vault_pass.txt
 echo 'YOUR_CONFIG_PASS' > .vault_pass.txt
@@ -159,7 +159,7 @@ Available tasks:
 
 ## Apply your changes
 
-```
+``` bash
 # RUN PLAY BOOK
 make apply
 
