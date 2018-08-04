@@ -1,3 +1,5 @@
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
 ### Disclaimer 
   This project will help you to deploy your Laravel project to your VPS  without a headache 
 it contains by default PHP - MySql - Redis - Nginx
