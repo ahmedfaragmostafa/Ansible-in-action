@@ -18,7 +18,7 @@ i update my `hosts.ini`, run a single command `make apply` then I bring my coffe
 Pull my latest changes using a single command `make code-deploy`
 
  
-##Project structure 
+## Project structure 
 ```
 ├── README.MD
 ├── MakeFile                # file contains some aliases to get started quickly 
