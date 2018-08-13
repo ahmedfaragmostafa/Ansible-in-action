@@ -3,6 +3,18 @@
 ![Plugin on redmine.org](https://img.shields.io/redmine/plugin/rating/redmine_xlsx_format_issue_exporter.svg)
 
 
+### Disclaimer 
+  This project will help you to deploy your Laravel project to your VPS  without a headache 
+it contains by default PHP - MySql - Redis - Nginx
+
+I suffered a lot while migrating my code base from VPS to another, I migrated my code base like 20 times between different servers 
+then I had to automate the process to save my time 
+
+currently I able to migrate from VPS to another in less than  5 minutes without any human interactions,  
+i update my `hosts.ini`, run a single command `make apply` then I bring my coffee, watch Ansible. 
+
+Pull my latest changes using a single command `make code-deploy`
+
 
 ## What Is Ansible?
 is an open source software that automates software provisioning, configuration management, and application deployment.
@@ -65,20 +77,6 @@ Handlers are lists of tasks, not really any different from regular tasks, that a
 ## Tags
 If you have a large playbook it may become useful to be able to run a specific part of the configuration without running the whole playbook.
 
-
-
-
-### Disclaimer 
-  This project will help you to deploy your Laravel project to your VPS  without a headache 
-it contains by default PHP - MySql - Redis - Nginx
-
-I suffered a lot while migrating my code base from VPS to another, I migrated my code base like 20 times between different servers 
-then I had to automate the process to save my time 
-
-currently I able to migrate from VPS to another in less than  5 minutes without any human interactions,  
-i update my `hosts.ini`, run a single command `make apply` then I bring my coffee, watch Ansible. 
-
-Pull my latest changes using a single command `make code-deploy`
 
  
 ## Project structure 
