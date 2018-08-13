@@ -4,6 +4,69 @@
 
 
 
+## What Is Ansible?
+is an open source software that automates software provisioning, configuration management, and application deployment.
+
+## The Keys Features of Ansible
+### Agentless
+There is no software or agent to be installed on the client that communicates back to the server.
+### Idempotent
+No matter how many times you call the operation, the result will be the same.
+### Simple and extensible
+Ansible is written in Python and uses YAML for playbook language, both of which are considered relatively easy to learn.
+
+
+---
+
+## Installion
+Installing and Running Ansible
+```bash
+# ubuntu 
+sudo apt-get install ansible
+#mac-OS
+brew install ansible
+```
+For other OS check [link](https://docs.ansible.com/ansible/2.5/installation_guide/intro_installation.html)
+
+## Ansible Architecture
+### Modules
+small programs that do some work on the server, so for example instead of running this command
+```bash 
+sudo apt-get install htop
+```
+we can use apt module and install htop
+```bash
+- name: Install htop
+  apt: name=htop
+```
+
+Using module give you the ability to know if it's installed or not.
+
+## Plugins
+Plugins are pieces of code that augment Ansible's core functionality. Ansible ships with a number of handy plugins, and you can easily write your own.
+## Host inventories
+To provide a list of hosts, we need to provide an inventory list. This is in the form of a hosts file.
+In its simplest form, our hosts file could contain a single line:
+```yml
+35.178.45.231  ansible_ssh_user=ubuntu
+```
+
+## Playbooks
+Ansible playbooks are a way to send commands to remote computers in a scripted way. Instead of using Ansible commands individually to remotely configure computers from the command line, you can configure entire complex environments by passing a script to one or more systems.
+
+## group_vars
+file contains set of variables for example db username and password.
+
+## Roles
+Roles are a way to group multiple tasks together into one container to do the automation in very effective manner with clean directory structures
+## Handlers
+Handlers are lists of tasks, not really any different from regular tasks, that are referenced by a globally unique name, and are notified by notifiers. If nothing notifies a handler, it will not run. Regardless of how many tasks notify a handler, it will run only once, after all of the tasks complete in a particular play.
+
+## Tags
+If you have a large playbook it may become useful to be able to run a specific part of the configuration without running the whole playbook.
+
+
+
 
 ### Disclaimer 
   This project will help you to deploy your Laravel project to your VPS  without a headache 
@@ -83,7 +146,7 @@ sudo apt-get install -y python2.7 python3 python-pip
 
 ### Clone Repo 
 ```
-git clone https://github.com/ahmedfaragmostafa/Ansible-4-laravel.git
+git clone https://github.com/ahmedfaragmostafa/Ansible-in-action.git
 ```
 
 ## Update ssh-keys
