@@ -3,6 +3,7 @@
 ![Plugin on redmine.org](https://img.shields.io/redmine/plugin/rating/redmine_xlsx_format_issue_exporter.svg)
 
 
+
 ### Disclaimer 
   This project will help you to deploy your Laravel project to your VPS  without a headache 
 it contains by default PHP - MySql - Redis - Nginx
